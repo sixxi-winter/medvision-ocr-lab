@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: medvision-ocr-lab
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
+      - key: PADDLE_PDX_MODEL_SOURCE
+        value: BOS
+
